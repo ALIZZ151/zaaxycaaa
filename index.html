@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@zaa_xyca</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;
+}
+
+/* 🌗 BACKGROUND */
+.bg{
+position:fixed;inset:0;
+background:linear-gradient(120deg,#000,#fff,#000);
+background-size:400% 400%;
+animation:bgShift 10s ease-in-out infinite;
+}
+@keyframes bgShift{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* 🌫️ LIGHT FOG */
+.bg::after{
+content:"";
+position:absolute;inset:0;
+background:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08),transparent),
+           radial-gradient(circle at 70% 60%,rgba(255,255,255,0.05),transparent);
+}
+
+/* ⭐ STAR */
+.star{
+position:absolute;top:-10px;width:2px;height:26px;
+background:white;box-shadow:0 0 10px white;
+animation:fall linear infinite;
+}
+@keyframes fall{
+0%{transform:translateY(-10vh);opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(110vh) translateX(30px);opacity:0;}
+}
+
+/* ⚪ PARTICLE */
+.particle{
+position:absolute;width:8px;height:8px;
+background:white;border-radius:50%;
+box-shadow:0 0 15px white;
+animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+0%{transform:translateY(100vh);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* CARD */
+.card{width:320px;text-align:center;z-index:10;position:relative;}
+
+/* ⚔️ PROFILE */
+.profile{
+width:120px;height:120px;margin:0 auto 10px;position:relative;
+}
+.profile img{
+width:100%;height:100%;border-radius:50%;object-fit:cover;z-index:2;position:relative;
+}
+.profile::before{
+content:"";position:absolute;inset:-6px;border-radius:50%;
+background:linear-gradient(45deg,#000,#fff,#000);
+animation:spin 3s linear infinite;
+}
+.profile::after{
+content:"";position:absolute;inset:-12px;border-radius:50%;
+box-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+@keyframes spin{
+0%{transform:rotate(0);}
+100%{transform:rotate(360deg);}
+}
+
+/* TEXT */
+h2,p,.section{color:white;mix-blend-mode:difference;}
+.welcome{font-size:14px;margin:5px 0;}
+.cta{font-size:12px;margin-bottom:15px;}
+.section{margin:15px 0 5px;font-weight:bold;}
+
+/* LINK */
+.link{
+margin:8px 0;padding:12px;border-radius:12px;
+display:flex;align-items:center;justify-content:center;gap:10px;
+background:rgba(255,255,255,0.12);
+transition:.2s;text-decoration:none;
+}
+.link:hover{transform:scale(1.05);}
+.link img{width:22px;}
+
+/* NEON */
+.ig{border-left:4px solid #ff4fd8;box-shadow:0 0 10px rgba(255,79,216,.4);}
+.tiktok{border-left:4px solid #00f2ea;box-shadow:0 0 10px rgba(0,242,234,.4),0 0 15px rgba(255,0,80,.3);}
+.threads{border-left:4px solid #fff;box-shadow:0 0 10px white;}
+.wa{border-left:4px solid #00ff5e;box-shadow:0 0 10px rgba(0,255,94,.4);}
+.donate{border-left:4px solid gold;box-shadow:0 0 10px rgba(255,215,0,.4);}
+
+/* POPUP */
+.popup{
+position:fixed;bottom:80px;left:50%;
+transform:translateX(-50%);
+background:black;color:white;padding:10px 15px;border-radius:10px;
+opacity:0;transition:.3s;
+}
+
+/* MUSIC */
+#musicBtn{
+position:fixed;bottom:20px;right:20px;
+padding:10px;border-radius:10px;background:white;
+}
+</style>
+</head>
+
+<body onclick="autoPlayMusic()">
+
+<div class="bg"></div>
+
+<script>
+for(let i=0;i<40;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(2+Math.random()*3)+"s";
+document.body.appendChild(s);
+}
+for(let i=0;i<30;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(p);
+}
+</script>
+
+<div id="popup" class="popup">pen banget ya sama nomor gue😹</div>
+
+<div class="card">
+
+<div class="profile">
+<img src="https://i.imgur.com/6oGcupr.jpeg">
+</div>
+
+<h2>@zaa_xyca</h2>
+<p class="welcome">Welcome to my website😼</p>
+<p class="cta">Klik tombol/layar kosong untuk menyalakan music🎶</p>
+
+<p class="section">• Social Media</p>
+
+<a class="link ig" href="https://instagram.com/zaa_xyca">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram</a>
+
+<a class="link tiktok" href="https://tiktok.com/@zaa_xyca">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"> TikTok</a>
+
+<a class="link threads" href="https://www.threads.com/@zaa_xyca">
+<img src="https://i.imgur.com/OkbiuT1.jpeg"> Threads</a>
+
+<a class="link wa" href="#" onclick="showMsg()">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp</a>
+
+<p class="section">• Donate (moga aj ad orang baik)</p>
+
+<a class="link donate" href="https://sociabuzz.com/zaa_xyca/tribe" target="_blank">
+<img src="https://i.imgur.com/HqCYCwl.jpeg"> SociaBuzz</a>
+
+</div>
+
+<audio id="bgm" loop>
+<source src="https://files.catbox.moe/sh96z9.mp3">
+</audio>
+
+<button onclick="toggleMusic()" id="musicBtn">🔊</button>
+
+<script>
+const music=document.getElementById("bgm");
+let started=false;
+
+function autoPlayMusic(){
+if(!started){music.play();started=true;}
+}
+
+function toggleMusic(){
+music.paused?music.play():music.pause();
+}
+
+function showMsg(){
+let p=document.getElementById("popup");
+p.style.opacity="1";
+setTimeout(()=>p.style.opacity="0",2500);
+}
+</script>
+
+</body>
+</html>
